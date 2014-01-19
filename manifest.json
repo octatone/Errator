@@ -2,7 +2,7 @@
   "name": "Errator",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Errator bring javascript errors front and center.",
+  "description": "Errator brings javascript errors front and center.",
   "homepage_url": "http://octatone.github.com/errator",
   "icons": {
     "16": "icons/icon16.png",
@@ -17,7 +17,10 @@
     "persistent": true
   },
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": {
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
+    },
     "default_title": "Errator"
   },
   "permissions": [

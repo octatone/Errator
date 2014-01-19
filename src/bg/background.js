@@ -1,3 +1,8 @@
+
+'use strict';
+/**
+  * Errator was created by Raymond May, Jr.
+  */
 var debuggerVersion = '1.0';
 var eventHistory = {};
 
@@ -44,6 +49,7 @@ function detachDebugger (tabId, callback) {
   });
 }
 
+// Debugger Events
 chrome.debugger.onEvent.addListener(function (debugee, method, params) {
 
   var tabId = debugee.tabId;
@@ -58,7 +64,7 @@ chrome.debugger.onEvent.addListener(function (debugee, method, params) {
   }
 });
 
-
+// Tab Events
 chrome.tabs.onCreated.addListener(function (tab) {
 
   attachDebugger(tab.id);
