@@ -1,4 +1,3 @@
-/* global Handlebars */
 'use strict';
 
 var eventHistory;
@@ -7,10 +6,6 @@ var tabId = parseInt(window.location.search.substring(1), 10);
 console.log(tabId);
 
 var $ = document;
-
-var templateNames = ['log-row'];
-var templates = {};
-
 
 function render () {
 
@@ -28,10 +23,8 @@ function render () {
     var $rowFrag = $.createDocumentFragment();
 
     var $tr = $.createElement('tr');
-
     var $error = $.createElement('td');
     $error.textContent = thisError.text;
-    console.log('error', $error);
     $tr.appendChild($error);
 
     var $info = $.createElement('td');
