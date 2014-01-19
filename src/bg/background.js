@@ -1,8 +1,8 @@
-
-'use strict';
 /**
   * Errator was created by Raymond May, Jr.
   */
+'use strict';
+
 var debuggerVersion = '1.0';
 var eventHistory = {};
 
