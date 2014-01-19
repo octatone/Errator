@@ -32,3 +32,4 @@ Roadmap
 =======
 
 - add a way to toggle Errator on and off globally (via the popup?)
+- add a way to whitelist/blacklist by regex patterns
