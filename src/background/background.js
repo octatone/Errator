@@ -40,7 +40,10 @@ function attachDebugger (tabId) {
       return;
     }
 
-    eventHistory[tabId] = {'count': 0};
+    eventHistory[tabId] = {
+      'count': 0,
+      'errors': []
+    };
 
     chrome.browserAction.setBadgeText({
       'text': '' + eventHistory[tabId].count,
@@ -68,14 +71,25 @@ function detachDebugger (tabId, callback) {
   });
 }
 
+function updateBrowserActionPopupURL (tabId) {
+
+  console.log('setting up popup for tab', tabId);
+  chrome.browserAction.setPopup({
+
+    'tabId': tabId,
+    'popup': 'src/browserAction/browserAction.html?' + tabId
+  });
+}
+
 // Debugger Events
 chrome.debugger.onEvent.addListener(function (debugee, method, params) {
 
   var tabId = debugee.tabId;
   var message = params.message;
 
-  if (message && message.level === 'error' && 'count' in eventHistory[tabId]) {
+  if (message && message.level === 'error' && message.source === 'javascript' && 'count' in eventHistory[tabId]) {
     eventHistory[tabId].count += 1;
+    eventHistory[tabId].errors.push(message);
     chrome.browserAction.setBadgeText({
       'text': '' + eventHistory[tabId].count,
       'tabId': tabId
@@ -86,10 +100,14 @@ chrome.debugger.onEvent.addListener(function (debugee, method, params) {
 // Tab Events
 chrome.tabs.onCreated.addListener(function (tab) {
 
-  attachDebugger(tab.id);
+  var tabId = tab.id;
+  attachDebugger(tabId);
+  updateBrowserActionPopupURL(tabId);
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo) {
+
+  updateBrowserActionPopupURL(tabId);
 
   if (changeInfo.status !== 'loading') {
     return;
@@ -109,8 +127,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo) {
   }
 });
 
-chrome.browserAction.onClicked.addListener(function (tab) {
+// chrome.browserAction.onClicked.addListener(function (tab) {
 
-  console.log('clicked');
-  attachDebugger(tab.id);
-});
+
+// });

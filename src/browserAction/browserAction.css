@@ -1,0 +1,48 @@
+html, body {
+  background: #000;
+  width: 100%;
+}
+
+* {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  color: #aaa;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;
+  border-spacing: 0;
+}
+
+td {
+  vertical-align: top;
+  width: 50%;
+  padding: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: right;
+}
+
+.error {
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.info {
+  text-align: right;
+}
+
+tr {
+  background: #000;
+}
+
+.odd {
+  background: #333;
+}
