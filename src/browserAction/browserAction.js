@@ -1,29 +1,66 @@
+/* global Handlebars */
 'use strict';
 
-var tabId = parseInt(window.location.search.substring(1));
+var eventHistory;
+
+var tabId = parseInt(window.location.search.substring(1), 10);
 console.log(tabId);
 
+var $ = document;
 
-chrome.runtime.getBackgroundPage(function (backgroundWindow) {
+var templateNames = ['log-row'];
+var templates = {};
 
-  console.dir(backgroundWindow.eventHistory);
+
+function render () {
+
+  var $tableInnerFrag = document.createDocumentFragment();
+
+  // clone messages into own array, sort newest to oldest
+  var errors = eventHistory[tabId].errors.slice(0);
+  errors = errors.sort(function (a, b) {
+
+    return b.timestamp - a.timestamp;
+  });
+
+  errors.forEach(function (thisError) {
+
+    var $rowFrag = $.createDocumentFragment();
+
+    var $tr = $.createElement('tr');
+
+    var $error = $.createElement('td');
+    $error.textContent = thisError.text;
+    console.log('error', $error);
+    $tr.appendChild($error);
+
+    var $info = $.createElement('td');
+    var $url = $.createElement('div');
+    $url.textContent = thisError.url;
+    $info.appendChild($url);
+
+    $tr.appendChild($info);
+    $rowFrag.appendChild($tr);
+
+    $tableInnerFrag.appendChild($rowFrag);
+  });
+
+  var $log = $.getElementById('log');
+  $log.innerHTML = '';
+  $log.appendChild($tableInnerFrag);
+}
+
+function start () {
+
+  render();
+}
+
+window.addEventListener('load', function () {
+
+  chrome.runtime.getBackgroundPage(function (backgroundWindow) {
+
+    eventHistory = backgroundWindow.eventHistory;
+
+    start();
+  });
 });
-
-// var initialTabId;
-
-// chrome.tabs.getCurrent(function (tab) {
-
-//   initialTabId = tab.id;
-//   console.log('inital tab id is', initialTabId);
-// });
-
-
-// function onActiveTabChanged (activeInfo) {
-
-//   var tabId = activeInfo.tabId;
-
-//   console.log('active tab changed to', tabId);
-// }
-
-// // Tab Events
-// chrome.tabs.onActivated.addListener(onActiveTabChanged);
