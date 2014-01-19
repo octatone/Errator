@@ -1,7 +1,7 @@
 Errator
 =======
 
-Errator is a Chrome simple yet useful extension that brings javascript errors front and center to your main Chrome toolbar.
+Errator is a simple yet useful extension that brings javascript errors front and center to your main Chrome toolbar.
 
 License
 =======
