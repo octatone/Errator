@@ -31,4 +31,4 @@ THE SOFTWARE.
 Roadmap
 =======
 
-- clicking the icon should open a popup with a list of all the errors, as well as a button for toggling Errator on and off globally.
+- add a way to toggle Errator on and off globally (via the popup?)
