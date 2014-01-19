@@ -87,7 +87,7 @@ chrome.debugger.onEvent.addListener(function (debugee, method, params) {
   var tabId = debugee.tabId;
   var message = params.message;
 
-  if (message && message.level === 'error' && 'count' in eventHistory[tabId]) {
+  if (message && message.level === 'error' && message.source === 'javascript' && 'count' in eventHistory[tabId]) {
     eventHistory[tabId].count += 1;
     eventHistory[tabId].errors.push(message);
     chrome.browserAction.setBadgeText({
