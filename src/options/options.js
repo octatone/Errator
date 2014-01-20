@@ -26,7 +26,7 @@
 
       ['whitelist', 'blacklist'].forEach(function (list) {
 
-        var patterns = storedOptions[list];
+        var patterns = storedOptions[list] || [];
         $.querySelector('#' + list).value = patterns.length ? patterns.join('\n') : '';
       });
     });
