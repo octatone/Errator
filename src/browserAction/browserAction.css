@@ -11,6 +11,12 @@ html, body {
   padding: 0;
 }
 
+button {
+  font-size: 14px;
+  padding: 5px;
+  color: #000;
+}
+
 table {
   width: 100%;
   min-width: 800px;
@@ -28,6 +34,16 @@ ul {
   padding: 0;
   list-style-type: none;
   text-align: right;
+}
+
+.header {
+  text-align: right;
+}
+
+.runtime-info {
+  position: absolute;
+  left: 6px;
+  top: 6px;
 }
 
 .error {

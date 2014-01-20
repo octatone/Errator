@@ -25,36 +25,88 @@
 var debuggerVersion = '1.0';
 var eventHistory = {};
 
+function ifShouldAttachDebugger (tabId, callback) {
+
+  chrome.storage.sync.get(null, function (storedOptions) {
+
+    // default to not run every where!
+    if (!('runEveryWhere' in storedOptions)) {
+      storedOptions.runEveryWhere = false;
+    }
+
+    var runEveryWhere = storedOptions.runEveryWhere;
+
+    // fetch tab info
+    chrome.tabs.get(tabId, function (tab) {
+
+      var matchesAPattern = false;
+      var patterns;
+
+      if (runEveryWhere) {
+        patterns = storedOptions.blacklist || [];
+      }
+      else {
+        patterns = storedOptions.whitelist || [];
+      }
+
+      if (patterns.length) {
+        patterns.forEach(function (pattern) {
+
+          var regex = new RegExp(pattern);
+          if (regex.test(tab.url)) {
+            matchesAPattern = true;
+          }
+        });
+      }
+
+      if (runEveryWhere && !matchesAPattern) {
+        callback();
+      }
+      else if (!runEveryWhere && matchesAPattern) {
+        callback();
+      }
+      else {
+        detachDebugger(tabId);
+      }
+    });
+  });
+}
+
 function attachDebugger (tabId) {
 
   var debugTarget = {
     'tabId': tabId
   };
 
-  chrome.debugger.attach(debugTarget, debuggerVersion, function () {
+  eventHistory[tabId] = undefined;
 
-    console.log('tab attached', tabId);
+  ifShouldAttachDebugger(tabId, function () {
+    // attach debugger to tab
+    chrome.debugger.attach(debugTarget, debuggerVersion, function () {
 
-    if (chrome.runtime.lastError) {
-      console.log(chrome.runtime.lastError.message);
-      return;
-    }
-
-    eventHistory[tabId] = {
-      'count': 0,
-      'errors': []
-    };
-
-    chrome.browserAction.setBadgeText({
-      'text': '' + eventHistory[tabId].count,
-      'tabId': tabId
-    });
-
-    chrome.debugger.sendCommand(debugTarget, 'Console.enable', function () {
+      console.log('tab attached', tabId);
 
       if (chrome.runtime.lastError) {
         console.log(chrome.runtime.lastError.message);
+        return;
       }
+
+      eventHistory[tabId] = {
+        'count': 0,
+        'errors': []
+      };
+
+      chrome.browserAction.setBadgeText({
+        'text': '' + eventHistory[tabId].count,
+        'tabId': tabId
+      });
+
+      chrome.debugger.sendCommand(debugTarget, 'Console.enable', function () {
+
+        if (chrome.runtime.lastError) {
+          console.log(chrome.runtime.lastError.message);
+        }
+      });
     });
   });
 }
@@ -126,8 +178,3 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo) {
     });
   }
 });
-
-// chrome.browserAction.onClicked.addListener(function (tab) {
-
-
-// });

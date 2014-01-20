@@ -36,6 +36,12 @@ function renderStackTraceFrag (stackTrace) {
 
 function render () {
 
+  if (!eventHistory[tabId]) {
+
+    $.querySelector('.header .runtime-info').textContent = 'Errator is not debugging this tab.';
+    return;
+  }
+
   var $tableInnerFrag = $.createDocumentFragment();
 
   // clone messages into own array, sort newest to oldest
@@ -87,8 +93,23 @@ function render () {
   $log.appendChild($tableInnerFrag);
 }
 
+function onClickOptions () {
+
+  var optionsUrl = chrome.extension.getURL('src/options/options.html');
+  chrome.tabs.query({'url': optionsUrl}, function (tabs) {
+
+    if (tabs.length) {
+      chrome.tabs.update(tabs[0].id, {'active': true});
+    }
+    else {
+      chrome.tabs.create({'url': optionsUrl});
+    }
+  });
+}
+
 function start () {
 
+  $.querySelector('button.options').addEventListener('click', onClickOptions);
   render();
 }
 
