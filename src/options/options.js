@@ -14,8 +14,16 @@
         return;
       }
 
-      $.querySelector('.runEveryWhere.true').checked = (storedOptions.runEveryWhere === true);
-      $.querySelector('.runEveryWhere.false').checked = (storedOptions.runEveryWhere === false);
+      [true, false].forEach(function (bool) {
+
+        $.querySelector('.runEveryWhere.' + bool).checked = (storedOptions.runEveryWhere === bool);
+      });
+
+      ['whitelist', 'blacklist'].forEach(function (list) {
+
+        var patterns = storedOptions[list];
+        $.querySelector('#' + list).value = patterns.length ? patterns.join('\n') : '';
+      });
     });
   }
 
@@ -37,20 +45,48 @@
   function splitByLineAndTrim (text) {
 
     var lines = text.split('\n');
-    lines.forEach(function (line) {
+    lines.forEach(function (line, idx) {
 
-      line = line.trim();
+      lines[idx] = line.trim();
     });
 
-    console.log(lines);
+    return lines;
   }
 
   function onSaveButtonClick () {
 
-    var $blacklist = $.querySelector('#blacklist');
-    var $whitelist = $.querySelector('#whitelist');
+    ['blacklist', 'whitelist'].forEach(function (list) {
 
+      var $list = $.querySelector('#' + list);
+      var lines = splitByLineAndTrim($list.value);
 
+      var validPatterns = [];
+      lines.forEach(function (line) {
+
+        var valid = line !== '';
+        try {
+          new RegExp(line);
+        }
+        catch (e) {
+          valid = false;
+        }
+
+        if (valid) {
+          validPatterns.push(line);
+        }
+      });
+
+      var data = {};
+      data[list] = validPatterns;
+
+      store.set(data, function () {
+
+        if (chrome.runtime.lastError) {
+          console.log(chrome.runtime.lastError.message);
+        }
+        console.log(list + ' set to', validPatterns);
+      });
+    });
   }
 
   window.addEventListener('load', function () {
