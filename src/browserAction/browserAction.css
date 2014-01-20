@@ -40,6 +40,12 @@ ul {
   text-align: right;
 }
 
+.runtime-info {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+
 .error {
   font-weight: bold;
   color: #FF0000;

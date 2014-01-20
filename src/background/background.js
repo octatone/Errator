@@ -65,6 +65,9 @@ function ifShouldAttachDebugger (tabId, callback) {
       else if (!runEveryWhere && matchesAPattern) {
         callback();
       }
+      else {
+        detachDebugger(tabId);
+      }
     });
   });
 }
@@ -74,6 +77,8 @@ function attachDebugger (tabId) {
   var debugTarget = {
     'tabId': tabId
   };
+
+  eventHistory[tabId] = undefined;
 
   ifShouldAttachDebugger(tabId, function () {
     // attach debugger to tab

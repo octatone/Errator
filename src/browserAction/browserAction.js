@@ -37,6 +37,8 @@ function renderStackTraceFrag (stackTrace) {
 function render () {
 
   if (!eventHistory[tabId]) {
+
+    $.querySelector('.header .runtime-info').textContent = 'Errator is not debugging this tab.';
     return;
   }
 
