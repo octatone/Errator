@@ -14,6 +14,11 @@
         return;
       }
 
+      // default to not run every where!
+      if (!('runEveryWhere' in storedOptions)) {
+        storedOptions.runEveryWhere = false;
+      }
+
       [true, false].forEach(function (bool) {
 
         $.querySelector('.runEveryWhere.' + bool).checked = (storedOptions.runEveryWhere === bool);
