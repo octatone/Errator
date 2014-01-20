@@ -1,6 +1,6 @@
 {
   "name": "Errator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Errator brings javascript errors front and center.",
   "homepage_url": "http://octatone.github.com/errator",
@@ -24,9 +24,13 @@
     "default_title": "Errator",
     "default_popup": "src/browserAction/browserAction.html"
   },
+  "options_page": "src/options/options.html",
   "permissions": [
-    "tabs",
+
     "debugger",
+    "storage",
+    "tabs",
+
     "http://*/*",
     "https://*/*"
   ]

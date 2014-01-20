@@ -1,0 +1,31 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="options.css">
+  <script type="text/javascript" src="options.js"></script>
+</head>
+<body>
+  <form id="options">
+    <fieldset>
+      <legend>Enable Errator for</legend>
+
+      <div>
+        <input type="radio" class="runEveryWhere true" name="runEveryWhere" value="true">all pages except those that match these url patterns: </input>
+        <fieldset>
+          <legend>Blacklist Regex Patterns (one per line)</legend>
+          <textarea id="blacklist"></textarea>
+        </fieldset>
+      </div>
+
+      <div>
+        <input type="radio" class="runEveryWhere false" name="runEveryWhere" value="false">only pages that match these url patterns:</input>
+
+        <fieldset>
+          <legend>Whitelist Regex Patterns (one per line)</legend>
+          <textarea id="whitelist"></textarea>
+        </fieldset>
+      </div>
+    </fieldset>
+  </form>
+  <button id="save">Save Changes</button>
+</body>
+</html>
