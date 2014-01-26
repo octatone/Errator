@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator apporte des erreurs javascript avant et centrale."
+  },
+
+  "buttonOptions": {
+    "message": "les options"
+  },
+
+  "buttonSave": {
+    "message": "Enregistrer les modifications"
+  },
+
+  "notDebugging": {
+    "message": "Errator n'est pas débogage cet onglet."
+  },
+
+  "funcInScript": {
+    "message": "$$func dans $$script",
+  },
+
+  "optionsEnableLegend": {
+    "message": "Activer Errator pour"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "toutes les pages sauf celles qui correspondent à ces formats d'URL:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "Patterns Blacklist Regex (un par ligne)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "seules les pages qui correspondent à ces formats d'URL:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Les expressions rationnelles de liste blanche (un par ligne)"
+  }
+}
