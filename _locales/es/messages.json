@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator trae errores de javascript frontales y central."
+  },
+
+  "buttonOptions": {
+    "message": "opciones"
+  },
+
+  "buttonSave": {
+    "message": "Guardar cambios"
+  },
+
+  "notDebugging": {
+    "message": "Errator no está depurando esta ficha."
+  },
+
+  "funcInScript": {
+    "message": "$$func en $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "Habilitar Errator para"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "todas las páginas excepto los que coincidan con estos patrones de URL:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "Patrones Blacklist Regex (uno por línea)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "sólo las páginas que responden a estos patrones de URL:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Patrones de expresiones regulares de lista blanca (una por línea)"
+  }
+}

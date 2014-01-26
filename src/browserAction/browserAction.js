@@ -106,7 +106,7 @@ function start () {
 
   var $optionsButton = $.querySelector('button.options');
   $optionsButton.addEventListener('click', onClickOptions);
-  $optionsButton.textContent = chrome.i18n.getMessage('buttonOptions');
+  $optionsButton.innerHTML = chrome.i18n.getMessage('buttonOptions');
   render();
 }
 
