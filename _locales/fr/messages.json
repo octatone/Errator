@@ -20,7 +20,7 @@
   },
 
   "funcInScript": {
-    "message": "$$func dans $$script",
+    "message": "$$func dans $$script"
   },
 
   "optionsEnableLegend": {
