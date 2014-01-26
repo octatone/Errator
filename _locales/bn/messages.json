@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator জাভাস্ক্রিপ্ট ত্রুটি সামনে এবং কেন্দ্র এটি."
+  },
+
+  "buttonOptions": {
+    "message": "অপশন"
+  },
+
+  "buttonSave": {
+    "message": "পরিবর্তনগুলি সঞ্চয় করুন"
+  },
+
+  "notDebugging": {
+    "message": "Errator এই ট্যাব ডিবাগ করা হয় না."
+  },
+
+  "funcInScript": {
+    "message": "$$func মধ্যে $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "জন্য Errator সক্রিয় করুন"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "এই url রীতির সঙ্গে সময় ব্যতীত সকল পৃষ্ঠা:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "নিষিদ্ধ জিনিসের RegEx প্যাটার্নস (প্রতি লাইনে একটি)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "এই url রীতির সঙ্গে সময় শুধুমাত্র পৃষ্ঠাসমূহ:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Whitelist RegEx প্যাটার্নস (প্রতি লাইনে একটি)"
+  }
+}
