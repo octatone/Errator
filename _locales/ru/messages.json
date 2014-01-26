@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator приносит наличие ошибок фронт и центр."
+  },
+
+  "buttonOptions": {
+    "message": "опции"
+  },
+
+  "buttonSave": {
+    "message": "Сохранить изменения"
+  },
+
+  "notDebugging": {
+    "message": "Errator не отладки эту вкладку."
+  },
+
+  "funcInScript": {
+    "message": "$$func в $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "Включить Errator для"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "все страницы, кроме тех, которые соответствуют эти шаблоны URL:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "Черный список регулярные выражения (по одному в строке)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "только страницы, которые соответствуют эти шаблоны URL:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Белый список регулярные выражения (по одному в строке)"
+  }
+}
