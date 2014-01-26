@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator帶來的前沿和中心javascript錯誤。"
+  },
+
+  "buttonOptions": {
+    "message": "選項"
+  },
+
+  "buttonSave": {
+    "message": "保存更改"
+  },
+
+  "notDebugging": {
+    "message": "Errator沒有調試該選項卡。"
+  },
+
+  "funcInScript": {
+    "message": "$$func 在 $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "啟用Errator的"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "除了那些符合這些URL模式，所有的網頁："
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "黑名單中的正則表達式模式（每行一個）"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "只有符合這些網址模式的網頁："
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "白名單正則表達式模式（每行一個）"
+  }
+}

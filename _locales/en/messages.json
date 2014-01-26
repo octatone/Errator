@@ -1,1 +1,48 @@
-{}
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator brings javascript errors front and center."
+  },
+
+  "buttonOptions": {
+    "message": "options",
+    "description": "The label for the options buttons that opens the extension's options page."
+  },
+
+  "buttonSave": {
+    "message": "Save Changes"
+  },
+
+  "notDebugging": {
+    "message": "Errator is not debugging this tab.",
+    "description": "Message shown when Errator is not active on a tab."
+  },
+
+  "funcInScript": {
+    "message": "$$func in $$script",
+    "description": "Stack trace information line.  Given someFunc and someScript '$$func in $$script' will result in 'someFunc in someScript'"
+  },
+
+  "optionsEnableLegend": {
+    "message": "Enable Errator for"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "all pages except those that match these url patterns:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "Blacklist Regex Patterns (one per line)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "only pages that match these url patterns:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Whitelist Regex Patterns (one per line)"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator जावास्क्रिप्ट त्रुटियों सामने और केन्द्र लाता है."
+  },
+
+  "buttonOptions": {
+    "message": "विकल्प"
+  },
+
+  "buttonSave": {
+    "message": "परिवर्तन सहेजें"
+  },
+
+  "notDebugging": {
+    "message": "Errator इस टैब डिबगिंग नहीं है."
+  },
+
+  "funcInScript": {
+    "message": "$$func में $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "के लिए Errator सक्षम करें"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "इन URL पैटर्न मैच है कि उन लोगों को छोड़कर सभी पृष्ठों:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "ब्लैकलिस्ट Regex पैटर्न (एक प्रति पंक्ति)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "इन URL पैटर्न से मेल खाने वाले केवल पृष्ठों:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "श्वेत सूची Regex पैटर्न (एक प्रति पंक्ति)"
+  }
+}

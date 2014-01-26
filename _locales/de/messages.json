@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator bringt JavaScript Fehler Front und Center."
+  },
+
+  "buttonOptions": {
+    "message": "Optionen"
+  },
+
+  "buttonSave": {
+    "message": "Änderungen speichern"
+  },
+
+  "notDebugging": {
+    "message": "Errator nicht diese Tab Debuggen."
+  },
+
+  "funcInScript": {
+    "message": "$$func in $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "Errator Freigabe für"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "alle Seiten mit Ausnahme derjenigen, die diese URL Patterns übereinstimmen:"
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "Blacklist Regex Patterns (eine pro Zeile)"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "nur Seiten, die diese URL Patterns übereinstimmen:"
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "Whitelist Regex Patterns (eine pro Zeile)"
+  }
+}

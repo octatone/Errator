@@ -3,7 +3,6 @@
 var eventHistory;
 
 var tabId = parseInt(window.location.search.substring(1), 10);
-console.log(tabId);
 
 var $ = document;
 
@@ -16,15 +15,15 @@ function scriptNameFromUrl (url) {
 function renderStackTraceFrag (stackTrace) {
 
   var $stackTraceFrag = $.createDocumentFragment();
-
   var $ul = $.createElement('ul');
 
   stackTrace.forEach(function (trace) {
 
     var $li = $.createElement('li');
     var scriptName = scriptNameFromUrl(trace.url);
-    var functionName = trace.functionName ? trace.functionName + ' in ' : '';
-    $li.textContent = functionName + scriptName + ':' + trace.lineNumber + ',' + trace.columnNumber;
+    var funcInScript = chrome.i18n.getMessage('funcInScript').replace('$script', scriptName);
+    funcInScript = trace.functionName ? funcInScript.replace('$func', trace.functionName) : scriptName;
+    $li.textContent = funcInScript + ':' + trace.lineNumber + ',' + trace.columnNumber;
 
     $ul.appendChild($li);
   });
@@ -37,8 +36,7 @@ function renderStackTraceFrag (stackTrace) {
 function render () {
 
   if (!eventHistory[tabId]) {
-
-    $.querySelector('.header .runtime-info').textContent = 'Errator is not debugging this tab.';
+    $.querySelector('.header .runtime-info').textContent = chrome.i18n.getMessage('notDebugging');
     return;
   }
 
@@ -51,10 +49,7 @@ function render () {
     return b.timestamp - a.timestamp;
   });
 
-  console.dir(errors);
-
   var isOdd = false;
-
   errors.forEach(function (thisError) {
 
     isOdd = !isOdd;
@@ -109,7 +104,9 @@ function onClickOptions () {
 
 function start () {
 
-  $.querySelector('button.options').addEventListener('click', onClickOptions);
+  var $optionsButton = $.querySelector('button.options');
+  $optionsButton.addEventListener('click', onClickOptions);
+  $optionsButton.innerHTML = chrome.i18n.getMessage('buttonOptions');
   render();
 }
 

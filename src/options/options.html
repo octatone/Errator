@@ -6,26 +6,36 @@
 <body>
   <form id="options">
     <fieldset>
-      <legend>Enable Errator for</legend>
+      <legend class="i18n" data-key="optionsEnableLegend">
+        Enable Errator for
+      </legend>
 
       <div>
-        <input type="radio" class="runEveryWhere true" name="runEveryWhere" value="true">all pages except those that match these url patterns: </input>
+        <input type="radio" class="runEveryWhere true i18n" name="runEveryWhere" value="true" data-key="optionsRadioBlacklist">
+          all pages except those that match these url patterns:
+        </input>
         <fieldset>
-          <legend>Blacklist Regex Patterns (one per line)</legend>
+          <legend class="i18n" data-key="optionsLegendBlacklist">
+            Blacklist Regex Patterns (one per line)
+          </legend>
           <textarea id="blacklist" placeholder="example\.com"></textarea>
         </fieldset>
       </div>
 
       <div>
-        <input type="radio" class="runEveryWhere false" name="runEveryWhere" value="false">only pages that match these url patterns:</input>
+        <input type="radio" class="runEveryWhere false i18n" name="runEveryWhere" value="false" data-key="optionsRadioWhitelist">
+          only pages that match these url patterns:
+        </input>
 
         <fieldset>
-          <legend>Whitelist Regex Patterns (one per line)</legend>
+          <legend class="i18n" data-key="optionsLegendWhitelist">
+            Whitelist Regex Patterns (one per line)
+          </legend>
           <textarea id="whitelist" placeholder="example\.com"></textarea>
         </fieldset>
       </div>
     </fieldset>
   </form>
-  <button id="save">Save Changes</button>
+  <button id="save" class="i18n" data-key="buttonSave">Save Changes</button>
 </body>
 </html>

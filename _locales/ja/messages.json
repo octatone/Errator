@@ -1,0 +1,45 @@
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "ErratorのJavaScriptエラーがフロントとセンターをもたらします。"
+  },
+
+  "buttonOptions": {
+    "message": "オプション"
+  },
+
+  "buttonSave": {
+    "message": "変更の保存"
+  },
+
+  "notDebugging": {
+    "message": "Errator、このタブをデバッグしていません。"
+  },
+
+  "funcInScript": {
+    "message": "$$func に $$script"
+  },
+
+  "optionsEnableLegend": {
+    "message": "用Erratorを有効に"
+  },
+
+  "optionsRadioBlacklist": {
+    "message": "これらのURLパターンに一致するものを除くすべてのページ："
+  },
+
+  "optionsLegendBlacklist": {
+    "message": "ブラックリスト正規表現パターン（1行に1つずつ）"
+  },
+
+  "optionsRadioWhitelist": {
+    "message": "これらのURLパターンに一致するページのみ："
+  },
+
+  "optionsLegendWhitelist": {
+    "message": "ホワイトリスト正規表現パターン（1行に1つずつ）"
+  }
+}

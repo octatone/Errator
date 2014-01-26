@@ -5,6 +5,26 @@
   var $ = document;
   var store = chrome.storage.sync;
 
+  function escapeHtml (str) {
+
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function renderStrings () {
+
+    var els = $.getElementsByClassName('i18n');
+    els = Array.prototype.slice.call(els);
+    els.forEach(function (el) {
+
+      var key = el.getAttribute('data-key');
+      var str = chrome.i18n.getMessage(key);
+      var escaped = escapeHtml(str);
+      el.innerHTML = escaped;
+    });
+  }
+
   function loadStoredOptions () {
 
     store.get(null, function (storedOptions) {
@@ -96,6 +116,7 @@
 
   window.addEventListener('load', function () {
 
+    renderStrings();
     loadStoredOptions();
 
     var $optionsForm = $.getElementById('options');
