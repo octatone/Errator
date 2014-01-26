@@ -1,8 +1,8 @@
 {
-  "name": "Errator",
-  "version": "0.0.3",
+  "name": "__MSG_extName__",
+  "version": "0.0.4",
   "manifest_version": 2,
-  "description": "Errator brings javascript errors front and center.",
+  "description": "__MSG_extDescription__",
   "homepage_url": "http://octatone.github.com/errator",
   "icons": {
     "16": "icons/icon16.png",
@@ -21,7 +21,7 @@
       "19": "icons/icon19.png",
       "38": "icons/icon38.png"
     },
-    "default_title": "Errator",
+    "default_title": "__MSG_extName__",
     "default_popup": "src/browserAction/browserAction.html"
   },
   "options_page": "src/options/options.html",

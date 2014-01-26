@@ -1,1 +1,24 @@
-{}
+{
+  "extName": {
+    "message": "Errator"
+  },
+
+  "extDescription": {
+    "message": "Errator brings javascript errors front and center."
+  },
+
+  "buttonOptions": {
+    "message": "options",
+    "description": "The label for the options buttons that opens the extension's options page."
+  },
+
+  "notDebugging": {
+    "message": "Errator is not debugging this tab.",
+    "description": "Message shown when Errator is not active on a tab."
+  },
+
+  "funcInScript": {
+    "message": "$$func in $$script",
+    "description": "Stack trace information line.  Given someFunc and someScript '$$func in $$script' will result in 'someFunc in someScript'"
+  }
+}
